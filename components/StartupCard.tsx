@@ -5,7 +5,16 @@ import Image from "next/image";
 import {Button} from "@/components/ui/button";
 
 const StartupCard = ({post}: { post: StartupTypeCard }) => {
-    const {_createdAt, views, author: {_id: authorId, name}, title, category, _id, description, image} = post;
+    const {
+        _createdAt,
+        views,
+        author: {_id: authorId, name, image: authorImage},
+        title,
+        category,
+        _id,
+        description,
+        image
+    } = post;
 
     return (
         <li className="startup-card group">
@@ -31,7 +40,7 @@ const StartupCard = ({post}: { post: StartupTypeCard }) => {
                     </Link>
                 </div>
                 <Link href={`/user/${authorId}`}>
-                    <Image src="https://placehold.co/48x48" alt="placeholder" width={48} height={48}
+                    <Image src={authorImage} alt="placeholder" width={48} height={48}
                            className="rounded-full"/>
                 </Link>
             </div>
