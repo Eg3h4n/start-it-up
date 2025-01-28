@@ -33,3 +33,23 @@ export const STARTUP_VIEWS_QUERY = defineQuery(`*[_type == "startup" && _id == $
 _id,
 views
 }`)
+
+export const AUTHOR_BY_GOOGLE_ID_QUERY = defineQuery(`*[_type == "author" && id == $id][0]{
+_id,
+id,
+name,
+username,
+email,
+image,
+bio
+}`)
+
+export const AUTHOR_BY_EMAIL_QUERY = defineQuery(`*[_type == "author" && email == $email][0]{
+_id,
+id,
+name,
+username,
+email,
+image,
+bio
+}`)

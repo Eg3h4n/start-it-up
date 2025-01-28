@@ -158,10 +158,11 @@ export type Author = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  id?: number;
+  email?: string;
+  google_provider_id?: string;
+  github_provider_id?: string;
   name?: string;
   username?: string;
-  email?: string;
   image?: string;
   bio?: string;
 };

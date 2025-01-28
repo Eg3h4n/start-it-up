@@ -844,10 +844,24 @@
           "type": "string"
         }
       },
-      "id": {
+      "email": {
         "type": "objectAttribute",
         "value": {
-          "type": "number"
+          "type": "string"
+        },
+        "optional": true
+      },
+      "google_provider_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "github_provider_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
         },
         "optional": true
       },
@@ -859,13 +873,6 @@
         "optional": true
       },
       "username": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        },
-        "optional": true
-      },
-      "email": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
