@@ -9,6 +9,9 @@ import {writeClient} from "@/sanity/lib/write-client";
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
     providers: [Google, Github],
+    // pages: {
+    //     signIn: "/login",
+    // },
     callbacks: {
         async signIn({user, account, profile}) {
             const isGoogle = account?.provider === "google";
@@ -77,7 +80,7 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                     const user = await client.withConfig({useCdn: false}).fetch(AUTHOR_BY_EMAIL_QUERY, {email});
 
                     if (user) {
-                        console.log("User email found:");
+                        console.log("User email found");
                         // If user exists, store the user ID in the token
                         token.id = user._id; // User's unique ID in Sanity
                         token.email = user.email; // Ensure email is consistent
@@ -97,5 +100,8 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
             }
             return session;
         }
+        // async redirect({url, baseUrl}) {
+        //     return url.startsWith(baseUrl) ? url : baseUrl + '/';
+        // }
     }
 })
