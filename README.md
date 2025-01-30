@@ -12,6 +12,7 @@ overview of what this project includes:
 - **Sanity CMS**: Integrated as a content management system for dynamic content.
 - **Fetching/Caching/SSR & PPR**: Implemented to handle data efficiently using Server-Side Rendering (SSR) and Partial
   Pre-Rendering (PPR).
+- **Sentry**: Implemented to monitor performance and track errors.
 
 ---
 
