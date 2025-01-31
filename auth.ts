@@ -46,13 +46,14 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                         bio: ""
                     })
                 } else {
-                    if (isGoogle && existingUser.google_provider_id == "") {
+                    console.log("in else");
+                    if (isGoogle && !existingUser.google_provider_id) {
                         console.log("Updating user with Google provider ID...");
                         await writeClient.patch(existingUser._id)
                             .set({google_provider_id: providerId})  // Set the Google provider ID
                             .commit();
                     }
-                    if (isGitHub && existingUser.github_provider_id == "") {
+                    if (isGitHub && !existingUser.github_provider_id) {
                         console.log("Updating user with GitHub provider ID...");
                         await writeClient.patch(existingUser._id)
                             .set({github_provider_id: String(providerId)})  // Set the GitHub provider ID
